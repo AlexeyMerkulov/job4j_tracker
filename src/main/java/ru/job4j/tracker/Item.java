@@ -36,4 +36,13 @@ public class Item {
     }
 
     public LocalDateTime getLocalDateTime() { return created; }
+
+    @Override
+    public String toString() {
+        return "Item{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", created=" + created +
+                '}';
+    }
 }
