@@ -49,7 +49,7 @@ public class StartUI {
                 System.out.println("=== Finding Item by name");
                 String name = input.askStr("Enter name of the required Item ");
                 Item[] items = tracker.findByName(name);
-                if (items != null) {
+                if (items.length != 0) {
                     for (int i = 0; i < items.length; i++) {
                         System.out.println(items[i].toString());
                     }
