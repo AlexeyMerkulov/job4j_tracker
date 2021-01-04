@@ -8,7 +8,6 @@ import java.util.Arrays;
 public class Tracker {
     private final List<Item> items = new ArrayList<Item>();
     private int ids = 1;
-    private int size = 0;
 
     public Item add(Item item) {
         item.setId(ids++);
@@ -32,9 +31,9 @@ public class Tracker {
 
     private int indexOf(int id) {
         int rsl = -1;
-        for (Item value : items) {
-            if (value.getId() == id) {
-                rsl = items.indexOf(value);
+        for (int index = 0; index < items.size(); index++) {
+            if (items.get(index).getId() == id) {
+                rsl = index;
                 break;
             }
         }
