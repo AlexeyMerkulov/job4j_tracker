@@ -6,14 +6,7 @@ import java.util.Comparator;
 
 public class SortByIDBack implements Comparator<Item> {
     @Override
-    public int compare(Item first, Item second) {
-        int rsl = Integer.compare(first.getId(), second.getId());
-        if (rsl > 0) {
-            return -1;
-        } else if (rsl < 0) {
-            return 1;
-        } else {
-            return 0;
-        }
+    public int compare(Item second, Item first) {
+        return Integer.compare(first.getId(), second.getId());
     }
 }
