@@ -26,7 +26,8 @@ public class StartUITest {
         Tracker tracker = new Tracker();
         Item item = tracker.add(new Item("Replaced item"));
         String replacedName = "New item name";
-        Input input = new StubInput(Arrays.asList("0", String.valueOf(item.getId()), replacedName, "1"));
+        Input input = new StubInput(Arrays.asList("0", String.valueOf(item.getId()),
+                replacedName, "1"));
         List<UserAction> actions = Arrays.asList(new EditAction(output), new ExitAction());
         new StartUI(output).init(input, tracker, actions);
         assertThat(tracker.findById(item.getId()).getName(), is(replacedName));
@@ -51,8 +52,8 @@ public class StartUITest {
         List<UserAction> actions = Arrays.asList(new ExitAction());
         new StartUI(out).init(in, tracker, actions);
         assertThat(out.toString(), is(
-                "Menu." + System.lineSeparator() +
-                        "0. === Exit program ===" + System.lineSeparator()));
+                "Menu." + System.lineSeparator()
+                        + "0. === Exit program ===" + System.lineSeparator()));
     }
 
     @Test
@@ -64,13 +65,14 @@ public class StartUITest {
         List<UserAction> actions = Arrays.asList(new ShowAction(out), new ExitAction());
         new StartUI(out).init(in, tracker, actions);
         assertThat(out.toString(), is(
-                "Menu." + System.lineSeparator() +
-                        "0. === Show all items ===" + System.lineSeparator() +
-                "1. === Exit program ===" + System.lineSeparator() +
-                "=== Show all items ===" + System.lineSeparator() +
-                item.toString() + System.lineSeparator() +
-                "Menu." + System.lineSeparator() + "0. === Show all items ===" +
-                System.lineSeparator() + "1. === Exit program ===" + System.lineSeparator()));
+                "Menu." + System.lineSeparator()
+                        + "0. === Show all items ===" + System.lineSeparator()
+                        + "1. === Exit program ===" + System.lineSeparator()
+                        + "=== Show all items ===" + System.lineSeparator()
+                        + item.toString() + System.lineSeparator()
+                        + "Menu." + System.lineSeparator() + "0. === Show all items ==="
+                        + System.lineSeparator() + "1. === Exit program ==="
+                        + System.lineSeparator()));
     }
 
     @Test
@@ -82,13 +84,14 @@ public class StartUITest {
         List<UserAction> actions = Arrays.asList(new FindNameAction(out), new ExitAction());
         new StartUI(out).init(in, tracker, actions);
         assertThat(out.toString(), is(
-                "Menu." + System.lineSeparator() +
-                        "0. === Finding Item by name ===" + System.lineSeparator() +
-                        "1. === Exit program ===" + System.lineSeparator() +
-                        "=== Finding Item by name ===" + System.lineSeparator() +
-                        item.toString() + System.lineSeparator() +
-                        "Menu." + System.lineSeparator() + "0. === Finding Item by name ===" +
-                        System.lineSeparator() + "1. === Exit program ===" + System.lineSeparator()));
+                "Menu." + System.lineSeparator()
+                        + "0. === Finding Item by name ==="
+                        + System.lineSeparator() + "1. === Exit program ==="
+                        + System.lineSeparator() + "=== Finding Item by name ==="
+                        + System.lineSeparator() + item.toString()
+                        + System.lineSeparator() + "Menu." + System.lineSeparator()
+                        + "0. === Finding Item by name ===" + System.lineSeparator()
+                        + "1. === Exit program ===" + System.lineSeparator()));
     }
 
     @Test
@@ -100,13 +103,14 @@ public class StartUITest {
         List<UserAction> actions = Arrays.asList(new FindIDAction(out), new ExitAction());
         new StartUI(out).init(in, tracker, actions);
         assertThat(out.toString(), is(
-                "Menu." + System.lineSeparator() +
-                        "0. === Finding by Id ===" + System.lineSeparator() +
-                        "1. === Exit program ===" + System.lineSeparator() +
-                        "=== Finding by Id ===" + System.lineSeparator() +
-                        item.toString() + System.lineSeparator() +
-                        "Menu." + System.lineSeparator() + "0. === Finding by Id ===" +
-                        System.lineSeparator() + "1. === Exit program ===" + System.lineSeparator()));
+                "Menu." + System.lineSeparator()
+                        + "0. === Finding by Id ===" + System.lineSeparator()
+                        + "1. === Exit program ===" + System.lineSeparator()
+                        + "=== Finding by Id ===" + System.lineSeparator()
+                        + item.toString() + System.lineSeparator()
+                        + "Menu." + System.lineSeparator() + "0. === Finding by Id ==="
+                        + System.lineSeparator() + "1. === Exit program ==="
+                        + System.lineSeparator()));
     }
 
     @Test

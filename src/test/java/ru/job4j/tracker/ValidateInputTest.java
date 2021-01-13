@@ -28,7 +28,7 @@ public class ValidateInputTest {
     }
 
     @Test
-    public void MultipleValidInput() {
+    public void multipleValidInput() {
         Output out = new StubOutput();
         Input in = new StubInput(Arrays.asList("1", "2", "3"));
         ValidateInput input = new ValidateInput(out, in);
@@ -37,7 +37,7 @@ public class ValidateInputTest {
     }
 
     @Test
-    public void NegativeValidInput() {
+    public void negativeValidInput() {
         Output out = new StubOutput();
         Input in = new StubInput(Arrays.asList("-1"));
         ValidateInput input = new ValidateInput(out, in);
