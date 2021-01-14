@@ -3,6 +3,10 @@ language: java
 jdk:
   - openjdk14
 
+env:
+  global:
+    - CODECOV_TOKEN="64e3aba7-35a2-40c4-aeab-5453b9446052"
+
 # используем режим обычного пользователя для сборки проекта.
 sudo: false
 
@@ -11,14 +15,11 @@ sudo: false
 after_success:
   - bash <(curl -s https://codecov.io/bash)
 
-# Отправлять уведомление на почту alexeymerkulovv@gmail.com если сборка упала
+# Отправлять уведомление на почтуyouremail@smtp.ru(Изменить на свою) если сборка упала
 notifications:
   email:
     recipients:
-      -alexeymerkulovv@gmail.com
+      - alexeymerkulovv@gmail.com
     on_success: never # default: change
     on_failure: always # default: always
 
-env:
-  global:
-    - CODECOV_TOKEN="64e3aba7-35a2-40c4-aeab-5453b9446052"
