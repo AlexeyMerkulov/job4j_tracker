@@ -18,6 +18,7 @@ notifications:
       -alexeymerkulovv@gmail.com
     on_success: never # default: change
     on_failure: always # default: always
+
 env:
   global:
     - CODECOV_TOKEN="64e3aba7-35a2-40c4-aeab-5453b9446052"
