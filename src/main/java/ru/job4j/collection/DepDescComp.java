@@ -10,6 +10,6 @@ public class DepDescComp implements Comparator<String> {
         if (o1First.equals(o2First)) {
             return o1.compareTo(o2);
         }
-        return o1First.compareTo(o2First);
+        return o2First.compareTo(o1First);
     }
 }
