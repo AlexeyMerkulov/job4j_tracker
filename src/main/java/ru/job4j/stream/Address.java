@@ -18,4 +18,24 @@ public class Address {
     public String getCity() {
         return city;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        Address address = (Address) o;
+        return Objects.equals(city, address.city)
+                && Objects.equals(street, address.street)
+                && Objects.equals(home, address.home)
+                && Objects.equals(apartment, address.apartment);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(city, street, home, apartment);
+    }
 }

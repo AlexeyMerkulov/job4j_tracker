@@ -7,6 +7,8 @@ public class Profiles {
     static List<Address> collect(List<Profile> profiles) {
         return profiles.stream()
                 .map(x -> x.getAddress())
+                .sorted(new CityComp())
+                .distinct()
                 .collect(Collectors.toList());
     }
 }
