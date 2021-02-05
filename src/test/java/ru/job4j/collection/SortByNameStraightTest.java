@@ -19,7 +19,7 @@ public class SortByNameStraightTest {
         Item item3 = new Item(3, "two");
         List<Item> items = Arrays.asList(item1, item2, item3);
         Collections.sort(items, new SortByNameStraight());
-        List<Item> itemsSorted = Arrays.asList(item2, item3, item1);
+        List<Item> itemsSorted = List.of(item2, item3, item1);
         assertThat(items, is(itemsSorted));
     }
 
@@ -30,7 +30,7 @@ public class SortByNameStraightTest {
         Item item3 = new Item(3, "two");
         List<Item> items = Arrays.asList(item1, item2, item3);
         Collections.sort(items, new SortByNameBack());
-        List<Item> itemsSorted = Arrays.asList(item1, item3, item2);
+        List<Item> itemsSorted = List.of(item1, item3, item2);
         assertThat(items, is(itemsSorted));
     }
 
@@ -41,7 +41,7 @@ public class SortByNameStraightTest {
         Item item3 = new Item(3, "two");
         List<Item> items = Arrays.asList(item2, item1, item3);
         Collections.sort(items, new SortByIDStraight());
-        List<Item> itemsSorted = Arrays.asList(item1, item2, item3);
+        List<Item> itemsSorted = List.of(item1, item2, item3);
         assertThat(items, is(itemsSorted));
     }
 
@@ -52,7 +52,7 @@ public class SortByNameStraightTest {
         Item item3 = new Item(3, "two");
         List<Item> items = Arrays.asList(item2, item1, item3);
         Collections.sort(items, new SortByIDBack());
-        List<Item> itemsSorted = Arrays.asList(item3, item2, item1);
+        List<Item> itemsSorted = List.of(item3, item2, item1);
         assertThat(items, is(itemsSorted));
     }
 }
