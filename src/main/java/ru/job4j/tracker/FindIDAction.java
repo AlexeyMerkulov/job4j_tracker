@@ -13,7 +13,7 @@ public class FindIDAction implements UserAction {
     }
 
     @Override
-    public boolean execute(Input input, Tracker tracker) {
+    public boolean execute(Input input, Store tracker) {
         out.println("=== Finding by Id ===");
         int id = input.askInt("Enter Id of the required Item ");
         Item item = tracker.findById(id);
