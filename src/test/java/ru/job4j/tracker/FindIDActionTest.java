@@ -2,8 +2,6 @@ package ru.job4j.tracker;
 
 import org.junit.Test;
 
-import java.time.format.DateTimeFormatter;
-
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.*;
 import static org.mockito.ArgumentMatchers.any;
@@ -11,9 +9,6 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 public class FindIDActionTest {
-
-    private static final DateTimeFormatter FORMATTER =
-            DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
 
     @Test
     public void whenExecuteSuccessfully() {
@@ -27,8 +22,7 @@ public class FindIDActionTest {
         findIDAction.execute(input, tracker);
         String ln = System.lineSeparator();
         assertThat(out.toString(), is("=== Finding by Id ===" + ln
-                + String.format("id: %s, name: %s, created: %s", item.getId(), item.getName(),
-                FORMATTER.format(item.getCreated())) + ln));
+                + item.toString() + ln));
     }
 
     @Test
