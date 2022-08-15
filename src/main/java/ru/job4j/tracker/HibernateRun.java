@@ -6,6 +6,7 @@ import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 public class HibernateRun {
@@ -28,6 +29,16 @@ public class HibernateRun {
             for (Item it : list) {
                 System.out.println(it);
             }
+            var item1 = new Item();
+            item1.setName("Alexander");
+            item1.setCreated(LocalDateTime.now());
+            item1.setDescription("Random desc");
+            var item2 = new Item();
+            item2.setName("Elena");
+            item2.setCreated(LocalDateTime.now());
+            item2.setDescription("Random desc");
+            create(item1, sf);
+            create(item2, sf);
         }  catch (Exception e) {
             e.printStackTrace();
         } finally {

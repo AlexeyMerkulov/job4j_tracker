@@ -1,7 +1,9 @@
 package ru.job4j.tracker;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -10,6 +12,8 @@ import java.time.LocalDateTime;
 @Table(name = "items")
 @Data
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
+@NoArgsConstructor
+@AllArgsConstructor
 public class Item {
     @EqualsAndHashCode.Include
     @Id
@@ -17,9 +21,7 @@ public class Item {
     private int id;
     private String name;
     private LocalDateTime created = LocalDateTime.now();
-
-    public Item() {
-    }
+    private String description;
 
     public Item(int id) {
         this.id = id;
